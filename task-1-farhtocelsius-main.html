@@ -1,0 +1,15 @@
+<script>
+	
+	function convertFahrToCelsius(farhData) {
+		if (isNaN(farhData)) {
+			let dataType = typeof(farhData)
+			return  `${farhData}  is not a valid number but an ${dataType}`
+		}else{
+			let c = (parseInt(farhData) - 32) * (5/9)
+			c  = c.toFixed(4)
+			return c
+		}
+	}
+
+	console.log(convertFahrToCelsius({temp : 0}))
+</script>

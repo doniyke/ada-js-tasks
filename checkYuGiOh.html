@@ -1,0 +1,35 @@
+<script>
+	function checkYuGiOh(n) {
+		let myArray = [];
+		if (isNaN(n)) {
+			return `invalid parameter: ${n}`
+		}else{
+			for (let count = 1; count <=n; count++) {
+				if (count%2 == 0 && (count%3 != 0) && (count%5 != 0)) {
+					myArray.push("yu");
+				}else if(count%3 == 0 && (count%2 != 0) && (count%5 != 0)){
+					myArray.push("gi")
+				}else if(count%5 == 0 && (count%3 != 0) && (count%2 != 0)){
+					myArray.push("oh")
+				}else if (count%2 == 0 && count%3 == 0 && count%5 != 0) {
+					myArray.push("yu-gi");
+				}
+				else if (count%2 == 0 && count%5 == 0 && count%3 != 0) {
+					myArray.push("yu-oh");
+				}
+				else if (count%3 == 0 && count%5 == 0 && count%2 != 0) {
+					myArray.push("gi-oh");
+				}
+				else if (count%2 == 0 && count%3 == 0 && count%5 == 0) {
+					myArray.push("yu-gi-oh");
+				}
+				else{
+					myArray.push(count);
+				}
+			}
+		}
+		console.log(myArray)
+		return myArray
+	}
+	console.log(checkYuGiOh(10))
+</script>
